@@ -9,14 +9,16 @@
 import SwiftUI
 
 struct ContentView: View {
-  var words = Word.all
+  @State private var locale = "en"
+  @State private var words: [String] = []
 
   var body: some View {
-    List {
-      ForEach(words, id: \.self) { word in
-        Text(word)
-      }
+    VStack {
+      Text("Words: \(words.count)")
     }
+    .onAppear(perform: {
+      self.words = Bundle.main.decode("words.\(self.locale).json")
+    })
   }
 }
 

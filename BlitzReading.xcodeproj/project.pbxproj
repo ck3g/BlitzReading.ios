@@ -16,7 +16,6 @@
 		3428991123D595EA00EBE2AA /* words.en.json in Resources */ = {isa = PBXBuildFile; fileRef = 3428990F23D595EA00EBE2AA /* words.en.json */; };
 		3428991223D595EA00EBE2AA /* words.de.json in Resources */ = {isa = PBXBuildFile; fileRef = 3428991023D595EA00EBE2AA /* words.de.json */; };
 		3428991623D5982B00EBE2AA /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3428991523D5982B00EBE2AA /* Bundle-Decodable.swift */; };
-		3428991823D59A4700EBE2AA /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3428991723D59A4700EBE2AA /* Word.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		3428990F23D595EA00EBE2AA /* words.en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.en.json; sourceTree = "<group>"; };
 		3428991023D595EA00EBE2AA /* words.de.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.de.json; sourceTree = "<group>"; };
 		3428991523D5982B00EBE2AA /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
-		3428991723D59A4700EBE2AA /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +72,6 @@
 				3428990923D5912900EBE2AA /* Info.plist */,
 				3428990323D5912900EBE2AA /* Preview Content */,
 				3428991523D5982B00EBE2AA /* Bundle-Decodable.swift */,
-				3428991723D59A4700EBE2AA /* Word.swift */,
 			);
 			path = BlitzReading;
 			sourceTree = "<group>";
@@ -162,7 +159,6 @@
 			files = (
 				342898FC23D5912700EBE2AA /* AppDelegate.swift in Sources */,
 				3428991623D5982B00EBE2AA /* Bundle-Decodable.swift in Sources */,
-				3428991823D59A4700EBE2AA /* Word.swift in Sources */,
 				342898FE23D5912700EBE2AA /* SceneDelegate.swift in Sources */,
 				3428990023D5912700EBE2AA /* ContentView.swift in Sources */,
 			);
