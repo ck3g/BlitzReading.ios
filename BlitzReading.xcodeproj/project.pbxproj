@@ -13,6 +13,8 @@
 		3428990223D5912900EBE2AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3428990123D5912900EBE2AA /* Assets.xcassets */; };
 		3428990523D5912900EBE2AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3428990423D5912900EBE2AA /* Preview Assets.xcassets */; };
 		3428990823D5912900EBE2AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3428990623D5912900EBE2AA /* LaunchScreen.storyboard */; };
+		3428991123D595EA00EBE2AA /* words.en.json in Resources */ = {isa = PBXBuildFile; fileRef = 3428990F23D595EA00EBE2AA /* words.en.json */; };
+		3428991223D595EA00EBE2AA /* words.de.json in Resources */ = {isa = PBXBuildFile; fileRef = 3428991023D595EA00EBE2AA /* words.de.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		3428990423D5912900EBE2AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3428990723D5912900EBE2AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3428990923D5912900EBE2AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3428990F23D595EA00EBE2AA /* words.en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.en.json; sourceTree = "<group>"; };
+		3428991023D595EA00EBE2AA /* words.de.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.de.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				342898FB23D5912700EBE2AA /* AppDelegate.swift */,
 				342898FD23D5912700EBE2AA /* SceneDelegate.swift */,
 				342898FF23D5912700EBE2AA /* ContentView.swift */,
+				3428991023D595EA00EBE2AA /* words.de.json */,
+				3428990F23D595EA00EBE2AA /* words.en.json */,
 				3428990123D5912900EBE2AA /* Assets.xcassets */,
 				3428990623D5912900EBE2AA /* LaunchScreen.storyboard */,
 				3428990923D5912900EBE2AA /* Info.plist */,
@@ -133,7 +139,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3428991223D595EA00EBE2AA /* words.de.json in Resources */,
 				3428990823D5912900EBE2AA /* LaunchScreen.storyboard in Resources */,
+				3428991123D595EA00EBE2AA /* words.en.json in Resources */,
 				3428990523D5912900EBE2AA /* Preview Assets.xcassets in Resources */,
 				3428990223D5912900EBE2AA /* Assets.xcassets in Resources */,
 			);
