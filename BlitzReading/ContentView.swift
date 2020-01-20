@@ -9,8 +9,14 @@
 import SwiftUI
 
 struct ContentView: View {
+  var words = Word.all
+
   var body: some View {
-    Text("Hello, World!")
+    List {
+      ForEach(words, id: \.self) { word in
+        Text(word)
+      }
+    }
   }
 }
 
