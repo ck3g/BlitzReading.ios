@@ -10,6 +10,7 @@ import SwiftUI
 
 struct PracticeView: View {
   let durationInSeconds: Int
+  let onFinish: () -> Void
 
   let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -21,9 +22,11 @@ struct PracticeView: View {
       Text("Time left: \(timeRemaining)")
     }
     .onReceive(timer) { time in
-      if self.timeRemaining > 0 {
-        self.timeRemaining -= 1
+      if self.timeRemaining == 0 {
+        self.onFinish()
       }
+
+      self.timeRemaining -= 1
     }
     .onAppear(perform: {
       self.timeRemaining = self.durationInSeconds
@@ -33,6 +36,6 @@ struct PracticeView: View {
 
 struct PracticeView_Previews: PreviewProvider {
   static var previews: some View {
-    PracticeView(durationInSeconds: 5)
+    PracticeView(durationInSeconds: 5, onFinish: {})
   }
 }

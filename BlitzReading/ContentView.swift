@@ -17,7 +17,7 @@ struct ContentView: View {
   var body: some View {
     VStack {
       if practiceStarted {
-        PracticeView(durationInSeconds: practiceDurationInSeconds)
+        PracticeView(durationInSeconds: practiceDurationInSeconds, onFinish: finishPractice)
       } else {
         PracticeSelectionView(locale: self.locale, onStart: startPractice)
       }
@@ -30,6 +30,10 @@ struct ContentView: View {
   func startPractice(_ durationInSeconds: Int) {
     self.practiceDurationInSeconds = durationInSeconds
     self.practiceStarted = true
+  }
+
+  func finishPractice() {
+    self.practiceStarted = false
   }
 }
 
