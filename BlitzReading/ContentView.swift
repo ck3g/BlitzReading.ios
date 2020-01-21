@@ -30,26 +30,35 @@ struct PracticeButton: View {
 struct ContentView: View {
   @State private var locale = "en"
   @State private var words: [String] = []
+  @State private var practiceStarted = false
+  @State private var practiceDurationInSeconds = 60
 
   let locales = ["en": "English", "de": "German"]
 
   var body: some View {
     VStack {
-      Text("Practice \(locales[locale] ?? "English") words")
-        .font(.headline)
-        .padding()
+      if practiceStarted {
+        Text("Practice started: \(practiceDurationInSeconds) seconds")
+      } else {
+        Text("Practice \(locales[locale] ?? "English") words")
+          .font(.headline)
+          .padding()
 
-      PracticeButton(text: "for 5 seconds", action: {
+        PracticeButton(text: "for 5 seconds", action: {
+          self.practiceStarted = true
+          self.practiceDurationInSeconds = 5
+        })
 
-      })
+        PracticeButton(text: "for 30 seconds", action: {
+          self.practiceStarted = true
+          self.practiceDurationInSeconds = 30
+        })
 
-      PracticeButton(text: "for 30 seconds", action: {
-
-      })
-
-      PracticeButton(text: "for 1 minute", action: {
-
-      })
+        PracticeButton(text: "for 60 seconds", action: {
+          self.practiceStarted = true
+          self.practiceDurationInSeconds = 60
+        })
+      }
     }
     .onAppear(perform: {
       self.words = Bundle.main.decode("words.\(self.locale).json")
