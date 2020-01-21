@@ -18,9 +18,18 @@ struct PracticeView: View {
   @State private var isActive = true
 
   var body: some View {
-    VStack {
-      Text("Practice started: \(durationInSeconds) seconds")
-      Text("Time left: \(timeRemaining)")
+    ZStack {
+      VStack {
+        HStack {
+          Spacer()
+          Text("\(timeRemaining)")
+            .font(.caption)
+            .padding()
+        }
+        Spacer()
+      }
+
+      Text("Practice screen")
     }
     .onReceive(timer) { time in
       guard self.isActive else { return }
