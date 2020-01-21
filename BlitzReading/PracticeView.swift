@@ -15,6 +15,7 @@ struct PracticeView: View {
   let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
   @State private var timeRemaining = 0
+  @State private var isActive = true
 
   var body: some View {
     VStack {
@@ -22,11 +23,19 @@ struct PracticeView: View {
       Text("Time left: \(timeRemaining)")
     }
     .onReceive(timer) { time in
+      guard self.isActive else { return }
+
       if self.timeRemaining == 0 {
         self.onFinish()
       }
 
       self.timeRemaining -= 1
+    }
+    .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+      self.isActive = false
+    }
+    .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+      self.isActive = true
     }
     .onAppear(perform: {
       self.timeRemaining = self.durationInSeconds
