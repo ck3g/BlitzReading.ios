@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct PracticeView: View {
+  let words: [String]
   let durationInSeconds: Int
   let onFinish: () -> Void
 
@@ -16,6 +17,8 @@ struct PracticeView: View {
 
   @State private var timeRemaining = 0
   @State private var isActive = true
+  @State private var currentWord = ""
+  @State private var remainingWords: [String] = []
 
   var body: some View {
     ZStack {
@@ -29,7 +32,24 @@ struct PracticeView: View {
         Spacer()
       }
 
-      Text("Practice screen")
+      Text(self.currentWord)
+        .font(.system(size: 90))
+
+      VStack {
+        Spacer()
+        HStack {
+          Spacer()
+          Button(action: {
+            self.currentWord = self.getNextWord()
+          }) {
+            Image(systemName: "arrow.right.circle")
+              .resizable()
+              .frame(width: 60, height: 60)
+          }
+          .padding()
+          .disabled(self.timeRemaining == 0)
+        }
+      }
     }
     .onReceive(timer) { time in
       guard self.isActive else { return }
@@ -48,12 +68,18 @@ struct PracticeView: View {
     }
     .onAppear(perform: {
       self.timeRemaining = self.durationInSeconds
+      self.remainingWords = self.words.shuffled()
+      self.currentWord = self.getNextWord()
     })
+  }
+
+  func getNextWord() -> String {
+    self.remainingWords.removeFirst()
   }
 }
 
 struct PracticeView_Previews: PreviewProvider {
   static var previews: some View {
-    PracticeView(durationInSeconds: 5, onFinish: {})
+    PracticeView(words: ["one", "the"], durationInSeconds: 5, onFinish: {})
   }
 }

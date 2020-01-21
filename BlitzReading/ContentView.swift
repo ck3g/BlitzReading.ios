@@ -17,7 +17,7 @@ struct ContentView: View {
   var body: some View {
     VStack {
       if practiceStarted {
-        PracticeView(durationInSeconds: practiceDurationInSeconds, onFinish: finishPractice)
+        PracticeView(words: self.words, durationInSeconds: practiceDurationInSeconds, onFinish: finishPractice)
       } else {
         PracticeSelectionView(locale: self.locale, onStart: startPractice)
       }
