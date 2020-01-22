@@ -32,15 +32,26 @@ struct PracticeResultsView: View {
 
   var body: some View {
     VStack {
+      Image(systemName: "star.fill")
+        .resizable()
+        .scaledToFit()
+        .frame(width: 100)
+        .foregroundColor(.yellow)
+
       Text("Well done!")
+        .bold()
         .font(.largeTitle)
+        .padding(.bottom)
 
       Group {
-        Text("That is") +
-        Text(" \(self.wordsPracticed) ").bold() +
-        Text("words per") +
+        Text("You have completed") +
         Text(" \(self.practiceDuration) ").bold() +
-        Text("seconds!")
+        Text("seconds practice.")
+      }
+
+      Group {
+        Text("Your score:") +
+        Text(" \(self.wordsPracticed) ").bold()
       }
       .padding()
 
