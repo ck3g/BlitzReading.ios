@@ -13,13 +13,25 @@ struct ContentView: View {
   @State private var words: [String] = []
   @State private var practiceStarted = false
   @State private var practiceDurationInSeconds = 60
+  @State private var showResults = false
 
   var body: some View {
     VStack {
       if practiceStarted {
         PracticeView(words: self.words, durationInSeconds: practiceDurationInSeconds, onFinish: finishPractice)
       } else {
-        PracticeSelectionView(locale: self.locale, onStart: startPractice)
+        if showResults {
+          PracticeResultsView(
+            onHome: {
+              self.showResults = false
+            },
+            onRetry: {
+              self.startPractice(self.practiceDurationInSeconds)
+            }
+          )
+        } else {
+          PracticeSelectionView(locale: self.locale, onStart: startPractice)
+        }
       }
     }
     .onAppear(perform: {
@@ -34,6 +46,7 @@ struct ContentView: View {
 
   func finishPractice() {
     self.practiceStarted = false
+    self.showResults = true
   }
 }
 
