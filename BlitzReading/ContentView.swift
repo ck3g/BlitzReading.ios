@@ -14,6 +14,7 @@ struct ContentView: View {
   @State private var practiceStarted = false
   @State private var practiceDurationInSeconds = 60
   @State private var showResults = false
+  @State private var lastPracticeWordsCount = 0
 
   var body: some View {
     VStack {
@@ -22,6 +23,8 @@ struct ContentView: View {
       } else {
         if showResults {
           PracticeResultsView(
+            wordsPracticed: self.lastPracticeWordsCount,
+            practiceDuration: self.practiceDurationInSeconds,
             onHome: {
               self.showResults = false
             },
@@ -44,7 +47,8 @@ struct ContentView: View {
     self.practiceStarted = true
   }
 
-  func finishPractice() {
+  func finishPractice(_ wordsPracticed: Int) {
+    self.lastPracticeWordsCount = wordsPracticed
     self.practiceStarted = false
     self.showResults = true
   }

@@ -25,6 +25,8 @@ struct ResultButton: View {
 }
 
 struct PracticeResultsView: View {
+  let wordsPracticed: Int
+  let practiceDuration: Int
   let onHome: () -> Void
   let onRetry: () -> Void
 
@@ -32,6 +34,15 @@ struct PracticeResultsView: View {
     VStack {
       Text("Well done!")
         .font(.largeTitle)
+
+      Group {
+        Text("That is") +
+        Text(" \(self.wordsPracticed) ").bold() +
+        Text("words per") +
+        Text(" \(self.practiceDuration) ").bold() +
+        Text("seconds!")
+      }
+      .padding()
 
       HStack {
         ResultButton(action: self.onHome, imageName: "house.fill")
@@ -43,6 +54,6 @@ struct PracticeResultsView: View {
 
 struct PracticeResultsView_Previews: PreviewProvider {
   static var previews: some View {
-    PracticeResultsView(onHome: {}, onRetry: {})
+    PracticeResultsView(wordsPracticed: 10, practiceDuration: 5, onHome: {}, onRetry: {})
   }
 }

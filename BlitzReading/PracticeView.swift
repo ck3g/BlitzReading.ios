@@ -11,11 +11,12 @@ import SwiftUI
 struct PracticeView: View {
   let words: [String]
   let durationInSeconds: Int
-  let onFinish: () -> Void
+  let onFinish: (_ wordsPracticed: Int) -> Void
 
   let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
   @State private var timeRemaining = 0
+  @State private var wordsPracticed = 0
   @State private var isActive = true
   @State private var currentWord = ""
   @State private var remainingWords: [String] = []
@@ -41,6 +42,7 @@ struct PracticeView: View {
           Spacer()
           Button(action: {
             self.currentWord = self.getNextWord()
+            self.wordsPracticed += 1
           }) {
             Image(systemName: "arrow.right.circle")
               .resizable()
@@ -55,7 +57,7 @@ struct PracticeView: View {
       guard self.isActive else { return }
 
       if self.timeRemaining == 0 {
-        self.onFinish()
+        self.onFinish(self.wordsPracticed)
       }
 
       self.timeRemaining -= 1
@@ -80,6 +82,6 @@ struct PracticeView: View {
 
 struct PracticeView_Previews: PreviewProvider {
   static var previews: some View {
-    PracticeView(words: ["one", "the"], durationInSeconds: 5, onFinish: {})
+    PracticeView(words: ["one", "the"], durationInSeconds: 5, onFinish: { _ in })
   }
 }
