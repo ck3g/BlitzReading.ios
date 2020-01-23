@@ -19,6 +19,7 @@
 		3428991A23D6D76800EBE2AA /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3428991923D6D76800EBE2AA /* PracticeView.swift */; };
 		3428991C23D6D7F400EBE2AA /* PracticeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3428991B23D6D7F400EBE2AA /* PracticeSelectionView.swift */; };
 		3428991E23D8282700EBE2AA /* PracticeResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3428991D23D8282700EBE2AA /* PracticeResultsView.swift */; };
+		3428992023D97E0000EBE2AA /* PracticeManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3428991F23D97E0000EBE2AA /* PracticeManagementView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		3428991923D6D76800EBE2AA /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
 		3428991B23D6D7F400EBE2AA /* PracticeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeSelectionView.swift; sourceTree = "<group>"; };
 		3428991D23D8282700EBE2AA /* PracticeResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeResultsView.swift; sourceTree = "<group>"; };
+		3428991F23D97E0000EBE2AA /* PracticeManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeManagementView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				3428991923D6D76800EBE2AA /* PracticeView.swift */,
 				3428991B23D6D7F400EBE2AA /* PracticeSelectionView.swift */,
 				3428991D23D8282700EBE2AA /* PracticeResultsView.swift */,
+				3428991F23D97E0000EBE2AA /* PracticeManagementView.swift */,
 			);
 			path = BlitzReading;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			files = (
 				3428991C23D6D7F400EBE2AA /* PracticeSelectionView.swift in Sources */,
 				342898FC23D5912700EBE2AA /* AppDelegate.swift in Sources */,
+				3428992023D97E0000EBE2AA /* PracticeManagementView.swift in Sources */,
 				3428991E23D8282700EBE2AA /* PracticeResultsView.swift in Sources */,
 				3428991A23D6D76800EBE2AA /* PracticeView.swift in Sources */,
 				3428991623D5982B00EBE2AA /* Bundle-Decodable.swift in Sources */,
