@@ -10,7 +10,19 @@ import SwiftUI
 
 struct ContentView: View {
   var body: some View {
-    PracticeManagementView()
+    TabView {
+      PracticeManagementView()
+        .tabItem {
+          Image(systemName: "book")
+          Text("Practice")
+        }
+
+      Text("Highscores")
+        .tabItem {
+          Image(systemName: "rosette")
+          Text("Highscores")
+        }
+    }
   }
 }
 
