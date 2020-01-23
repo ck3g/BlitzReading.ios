@@ -12,6 +12,7 @@ struct PracticeView: View {
   let words: [String]
   let durationInSeconds: Int
   let onFinish: (_ wordsPracticed: Int) -> Void
+  let onAbort: () -> Void
 
   let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -73,6 +74,10 @@ struct PracticeView: View {
       self.remainingWords = self.words.shuffled()
       self.currentWord = self.getNextWord()
     })
+    .onDisappear(perform: {
+      // When TabView was changed
+      self.onAbort()
+    })
   }
 
   func getNextWord() -> String {
@@ -82,6 +87,6 @@ struct PracticeView: View {
 
 struct PracticeView_Previews: PreviewProvider {
   static var previews: some View {
-    PracticeView(words: ["one", "the"], durationInSeconds: 5, onFinish: { _ in })
+    PracticeView(words: ["one", "the"], durationInSeconds: 5, onFinish: { _ in }, onAbort: {})
   }
 }

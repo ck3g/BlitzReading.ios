@@ -19,7 +19,7 @@ struct PracticeManagementView: View {
   var body: some View {
     VStack {
       if practiceStarted {
-        PracticeView(words: self.words, durationInSeconds: practiceDurationInSeconds, onFinish: finishPractice)
+        PracticeView(words: self.words, durationInSeconds: practiceDurationInSeconds, onFinish: finishPractice, onAbort: abortPractice)
       } else {
         if showResults {
           PracticeResultsView(
@@ -51,6 +51,11 @@ struct PracticeManagementView: View {
     self.lastPracticeWordsCount = wordsPracticed
     self.practiceStarted = false
     self.showResults = true
+  }
+
+  func abortPractice() {
+    self.practiceStarted = false
+    self.showResults = false
   }
 }
 

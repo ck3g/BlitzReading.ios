@@ -56,7 +56,7 @@ struct PracticeResultsView: View {
       .padding()
 
       HStack {
-        ResultButton(action: self.onHome, imageName: "house.fill")
+        ResultButton(action: self.onHome, imageName: "book")
         ResultButton(action: self.onRetry, imageName: "arrow.clockwise")
       }
     }
