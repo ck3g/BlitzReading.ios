@@ -25,10 +25,7 @@ struct ResultButton: View {
 }
 
 struct PracticeResultsView: View {
-  let wordsPracticed: Int
-  let practiceDuration: Int
-  let onHome: () -> Void
-  let onRetry: () -> Void
+  @EnvironmentObject var practiceParams: PracticeParams
 
   var body: some View {
     VStack {
@@ -45,19 +42,23 @@ struct PracticeResultsView: View {
 
       Group {
         Text("You have completed") +
-        Text(" \(self.practiceDuration) ").bold() +
-        Text("seconds practice.")
+          Text(" \(self.practiceParams.durationInSeconds) ").bold() +
+          Text("seconds practice.")
       }
 
       Group {
         Text("Your score:") +
-        Text(" \(self.wordsPracticed) ").bold()
+          Text(" \(self.practiceParams.wordsPracticed) ").bold()
       }
       .padding()
 
       HStack {
-        ResultButton(action: self.onHome, imageName: "book")
-        ResultButton(action: self.onRetry, imageName: "arrow.clockwise")
+        ResultButton(action: {
+          self.practiceParams.selectPractice()
+        }, imageName: "book")
+        ResultButton(action: {
+          self.practiceParams.startPractice()
+        }, imageName: "arrow.clockwise")
       }
     }
   }
@@ -65,6 +66,6 @@ struct PracticeResultsView: View {
 
 struct PracticeResultsView_Previews: PreviewProvider {
   static var previews: some View {
-    PracticeResultsView(wordsPracticed: 10, practiceDuration: 5, onHome: {}, onRetry: {})
+    PracticeResultsView()
   }
 }

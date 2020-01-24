@@ -9,20 +9,31 @@
 import SwiftUI
 
 struct ContentView: View {
-  var body: some View {
-    TabView {
-      PracticeManagementView()
-        .tabItem {
-          Image(systemName: "book")
-          Text("Practice")
-        }
+  @ObservedObject var practiceParams = PracticeParams()
 
-      Text("Highscores")
-        .tabItem {
-          Image(systemName: "rosette")
+  let practiceManagementView = PracticeManagementView()
+
+  var body: some View {
+    Group {
+      if self.practiceParams.practiceStarted {
+        practiceManagementView
+      } else {
+        TabView {
+          practiceManagementView
+            .tabItem {
+              Image(systemName: "book")
+              Text("Practice")
+            }
+
           Text("Highscores")
+            .tabItem {
+              Image(systemName: "rosette")
+              Text("Highscores")
+            }
         }
+      }
     }
+    .environmentObject(self.practiceParams)
   }
 }
 

@@ -29,27 +29,26 @@ struct PracticeButton: View {
 }
 
 struct PracticeSelectionView: View {
-  let locale: String
-  let onStart: (_ durationInSeconds: Int) -> Void
+  @EnvironmentObject var practiceParams: PracticeParams
 
   let locales = ["en": "English", "de": "German"]
 
   var body: some View {
     VStack {
-      Text("Practice \(locales[locale] ?? "English") words")
+      Text("Practice \(locales[self.practiceParams.locale] ?? "English") words")
         .font(.headline)
         .padding()
 
       PracticeButton(text: "for 5 seconds", action: {
-        self.onStart(5)
+        self.practiceParams.startPractice(duration: 5)
       })
 
       PracticeButton(text: "for 30 seconds", action: {
-        self.onStart(30)
+        self.practiceParams.startPractice(duration: 30)
       })
 
       PracticeButton(text: "for 60 seconds", action: {
-        self.onStart(60)
+        self.practiceParams.startPractice(duration: 60)
       })
     }
   }
@@ -57,6 +56,6 @@ struct PracticeSelectionView: View {
 
 struct PracticeSelectionView_Previews: PreviewProvider {
   static var previews: some View {
-    PracticeSelectionView(locale: "en", onStart: { _ in } )
+    PracticeSelectionView()
   }
 }

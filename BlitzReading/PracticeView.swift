@@ -9,10 +9,7 @@
 import SwiftUI
 
 struct PracticeView: View {
-  let words: [String]
-  let durationInSeconds: Int
-  let onFinish: (_ wordsPracticed: Int) -> Void
-  let onAbort: () -> Void
+  @EnvironmentObject var practiceParams: PracticeParams
 
   let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -58,7 +55,7 @@ struct PracticeView: View {
       guard self.isActive else { return }
 
       if self.timeRemaining == 0 {
-        self.onFinish(self.wordsPracticed)
+        self.practiceParams.finishPractice(wordsPracticed: self.wordsPracticed)
       }
 
       self.timeRemaining -= 1
@@ -70,13 +67,9 @@ struct PracticeView: View {
       self.isActive = true
     }
     .onAppear(perform: {
-      self.timeRemaining = self.durationInSeconds
-      self.remainingWords = self.words.shuffled()
+      self.timeRemaining = self.practiceParams.durationInSeconds
+      self.remainingWords = self.practiceParams.words.shuffled()
       self.currentWord = self.getNextWord()
-    })
-    .onDisappear(perform: {
-      // When TabView was changed
-      self.onAbort()
     })
   }
 
@@ -87,6 +80,6 @@ struct PracticeView: View {
 
 struct PracticeView_Previews: PreviewProvider {
   static var previews: some View {
-    PracticeView(words: ["one", "the"], durationInSeconds: 5, onFinish: { _ in }, onAbort: {})
+    PracticeView()
   }
 }

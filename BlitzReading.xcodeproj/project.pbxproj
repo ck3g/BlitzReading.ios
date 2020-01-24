@@ -20,6 +20,7 @@
 		3428991C23D6D7F400EBE2AA /* PracticeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3428991B23D6D7F400EBE2AA /* PracticeSelectionView.swift */; };
 		3428991E23D8282700EBE2AA /* PracticeResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3428991D23D8282700EBE2AA /* PracticeResultsView.swift */; };
 		3428992023D97E0000EBE2AA /* PracticeManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3428991F23D97E0000EBE2AA /* PracticeManagementView.swift */; };
+		3428992223DAD2EF00EBE2AA /* PracticeParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3428992123DAD2EF00EBE2AA /* PracticeParams.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		3428991B23D6D7F400EBE2AA /* PracticeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeSelectionView.swift; sourceTree = "<group>"; };
 		3428991D23D8282700EBE2AA /* PracticeResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeResultsView.swift; sourceTree = "<group>"; };
 		3428991F23D97E0000EBE2AA /* PracticeManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeManagementView.swift; sourceTree = "<group>"; };
+		3428992123DAD2EF00EBE2AA /* PracticeParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeParams.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				3428991B23D6D7F400EBE2AA /* PracticeSelectionView.swift */,
 				3428991D23D8282700EBE2AA /* PracticeResultsView.swift */,
 				3428991F23D97E0000EBE2AA /* PracticeManagementView.swift */,
+				3428992123DAD2EF00EBE2AA /* PracticeParams.swift */,
 			);
 			path = BlitzReading;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				3428991623D5982B00EBE2AA /* Bundle-Decodable.swift in Sources */,
 				342898FE23D5912700EBE2AA /* SceneDelegate.swift in Sources */,
 				3428990023D5912700EBE2AA /* ContentView.swift in Sources */,
+				3428992223DAD2EF00EBE2AA /* PracticeParams.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
