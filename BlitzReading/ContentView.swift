@@ -25,7 +25,7 @@ struct ContentView: View {
               Text("Practice")
             }
 
-          Text("Highscores")
+          HighscoresView()
             .tabItem {
               Image(systemName: "rosette")
               Text("Highscores")
