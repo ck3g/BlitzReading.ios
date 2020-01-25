@@ -26,43 +26,103 @@ struct Score: Identifiable {
   ]
 }
 
-struct HighscoresView: View {
-  @State private var highscores: [Score] = []
-  @State private var duration = 5
-
-  let durations = [5, 30, 60]
-
-  var filteredHighscores: [Score] {
-    self.highscores.filter({ $0.practiceDuration == self.duration })
-  }
+struct HighscoresHeader: View {
+  let screenHeight: CGFloat
 
   var body: some View {
-    VStack {
+    Group {
       Image(systemName: "rosette")
         .resizable()
         .scaledToFit()
         .frame(width: 70)
         .foregroundColor(.yellow)
+        .padding(.top, screenHeight * 0.05)
+        .padding(.bottom)
 
-      Picker("Duration", selection: $duration) {
-        ForEach(durations, id: \.self) {
-          Text("\($0) seconds")
-        }
-      }
-      .pickerStyle(SegmentedPickerStyle())
+      Text("Highscores")
+        .font(.largeTitle)
+        .padding(.bottom, screenHeight * 0.1)
+    }
+  }
+}
 
-      VStack(alignment: .leading) {
-        ForEach(filteredHighscores) { score in
-          HStack {
-            Text("1")
+struct HighscoresView: View {
+  @Environment(\.horizontalSizeClass) var sizeClass
 
-            Text("\(score.practicedWords)")
+  @State private var highscores: [Score] = []
+
+  let durations = [5, 30, 60]
+
+  var rankedHighscores: [Int: [Score]] {
+    [
+      5: self.highscores.filter({ $0.practiceDuration == 5 }).sorted(by: { $0.practicedWords < $1.practicedWords }),
+      30: self.highscores.filter({ $0.practiceDuration == 30 }).sorted(by: { $0.practicedWords < $1.practicedWords }),
+      60: self.highscores.filter({ $0.practiceDuration == 60 }).sorted(by: { $0.practicedWords < $1.practicedWords }),
+    ]
+  }
+
+  var longestListCount: Int {
+    self.rankedHighscores.max(by: { $0.value.count < $1.value.count })?.value.count ?? 0
+  }
+
+  var body: some View {
+   GeometryReader { geometry in
+      VStack {
+        HStack {
+          if self.sizeClass == .compact {
+            VStack { HighscoresHeader(screenHeight: geometry.size.height) }
+          } else {
+            HStack { HighscoresHeader(screenHeight: geometry.size.height) }
           }
         }
-      }
-    }.onAppear(perform: {
-      self.highscores = Score.example
-    })
+
+
+        HStack(alignment: .top) {
+          VStack(alignment: .leading) {
+            Group {
+              Text(" ")
+              Text("#")
+                .bold()
+            }
+            .font(.subheadline)
+
+            Divider()
+
+            ForEach(0..<self.longestListCount, id: \.self) { index in
+              Text("\(index + 1).")
+                .bold()
+                .padding(.bottom, 10)
+            }
+          }
+
+          ForEach(self.durations, id: \.self) { duration in
+            Group {
+              Spacer()
+
+              VStack {
+                Group {
+                  Text("words").bold()
+                  Text("per \(duration) sec").bold()
+                }
+                .font(.subheadline)
+                Divider()
+
+                ForEach(self.rankedHighscores[duration] ?? []) { highscore in
+                  Text("\(highscore.practicedWords)")
+                    .foregroundColor(.secondary)
+                    .padding(.bottom, 10)
+                }
+              }
+            }
+          }
+        }
+        .frame(width: geometry.size.width * 0.9)
+
+        Spacer()
+      }.onAppear(perform: {
+        self.highscores = Score.example
+      })
+    }
   }
 }
 
