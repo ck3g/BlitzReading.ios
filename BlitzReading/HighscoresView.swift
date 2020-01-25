@@ -55,9 +55,9 @@ struct HighscoresView: View {
 
   var rankedHighscores: [Int: [Score]] {
     [
-      5: self.highscores.filter({ $0.practiceDuration == 5 }).sorted(by: { $0.practicedWords < $1.practicedWords }),
-      30: self.highscores.filter({ $0.practiceDuration == 30 }).sorted(by: { $0.practicedWords < $1.practicedWords }),
-      60: self.highscores.filter({ $0.practiceDuration == 60 }).sorted(by: { $0.practicedWords < $1.practicedWords }),
+      5: self.highscores.filter({ $0.practiceDuration == 5 }).sorted(by: { $0.practicedWords > $1.practicedWords }),
+      30: self.highscores.filter({ $0.practiceDuration == 30 }).sorted(by: { $0.practicedWords > $1.practicedWords }),
+      60: self.highscores.filter({ $0.practiceDuration == 60 }).sorted(by: { $0.practicedWords > $1.practicedWords }),
     ]
   }
 
