@@ -28,9 +28,15 @@ struct Score: Identifiable {
 }
 
 class Highscores: ObservableObject {
-  let scores: [Score]
+  var scores: [Score]
 
   init() {
     self.scores = Score.example
+  }
+
+  func add(duration: Int, words: Int) {
+    self.objectWillChange.send()
+    let score = Score(practiceDuration: duration, practicedWords: words)
+    self.scores.append(score)
   }
 }
