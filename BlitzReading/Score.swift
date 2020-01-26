@@ -31,7 +31,7 @@ class Highscores: ObservableObject {
   var scores: [Score]
 
   init() {
-    self.scores = Score.example
+    self.scores = []
   }
 
   func add(duration: Int, words: Int) {

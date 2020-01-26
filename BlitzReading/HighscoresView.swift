@@ -46,6 +46,10 @@ struct HighscoresView: View {
     self.rankedHighscores.max(by: { $0.value.count < $1.value.count })?.value.count ?? 0
   }
 
+  var hasHighscores: Bool {
+    self.highscores.scores.count > 0
+  }
+
   var body: some View {
    GeometryReader { geometry in
       VStack {
@@ -58,46 +62,54 @@ struct HighscoresView: View {
         }
 
 
-        HStack(alignment: .top) {
-          VStack(alignment: .leading) {
-            Group {
-              Text(" ")
-              Text("#")
-                .bold()
+        if self.hasHighscores {
+          HStack(alignment: .top) {
+            VStack(alignment: .leading) {
+              Group {
+                Text(" ")
+                Text("#")
+                  .bold()
+              }
+              .font(.subheadline)
+
+              Divider()
+
+              ForEach(0..<self.longestListCount, id: \.self) { index in
+                Text("\(index + 1).")
+                  .bold()
+                  .padding(.bottom, 10)
+              }
             }
-            .font(.subheadline)
 
-            Divider()
+            ForEach(self.durations, id: \.self) { duration in
+              Group {
+                Spacer()
 
-            ForEach(0..<self.longestListCount, id: \.self) { index in
-              Text("\(index + 1).")
-                .bold()
-                .padding(.bottom, 10)
-            }
-          }
+                VStack {
+                  Group {
+                    Text("words").bold()
+                    Text("per \(duration) sec").bold()
+                  }
+                  .font(.subheadline)
+                  Divider()
 
-          ForEach(self.durations, id: \.self) { duration in
-            Group {
-              Spacer()
-
-              VStack {
-                Group {
-                  Text("words").bold()
-                  Text("per \(duration) sec").bold()
-                }
-                .font(.subheadline)
-                Divider()
-
-                ForEach(self.rankedHighscores[duration] ?? []) { highscore in
-                  Text("\(highscore.practicedWords)")
-                    .foregroundColor(.secondary)
-                    .padding(.bottom, 10)
+                  ForEach(self.rankedHighscores[duration] ?? []) { highscore in
+                    Text("\(highscore.practicedWords)")
+                      .foregroundColor(.secondary)
+                      .padding(.bottom, 10)
+                  }
                 }
               }
             }
           }
+          .frame(width: geometry.size.width * 0.9)
+        } else {
+          Text("You have no high scores yet")
+            .font(.headline)
+            .padding()
+          Text("Come back after some practice")
+            .font(.subheadline)
         }
-        .frame(width: geometry.size.width * 0.9)
 
         Spacer()
       }
