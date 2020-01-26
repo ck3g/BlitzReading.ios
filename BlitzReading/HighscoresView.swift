@@ -8,24 +8,6 @@
 
 import SwiftUI
 
-struct Score: Identifiable {
-  let id = UUID()
-  let practiceDuration: Int
-  let practicedWords: Int
-
-  static var example: [Score] = [
-    Score(practiceDuration: 5, practicedWords: 5),
-    Score(practiceDuration: 5, practicedWords: 7),
-    Score(practiceDuration: 5, practicedWords: 3),
-    Score(practiceDuration: 30, practicedWords: 27),
-    Score(practiceDuration: 30, practicedWords: 20),
-    Score(practiceDuration: 30, practicedWords: 35),
-    Score(practiceDuration: 30, practicedWords: 10),
-    Score(practiceDuration: 60, practicedWords: 60),
-    Score(practiceDuration: 60, practicedWords: 80)
-  ]
-}
-
 struct HighscoresHeader: View {
   let screenHeight: CGFloat
 
@@ -48,16 +30,15 @@ struct HighscoresHeader: View {
 
 struct HighscoresView: View {
   @Environment(\.horizontalSizeClass) var sizeClass
-
-  @State private var highscores: [Score] = []
+  @EnvironmentObject var highscores: Highscores
 
   let durations = [5, 30, 60]
 
   var rankedHighscores: [Int: [Score]] {
     [
-      5:  self.sortedHighscores(highscores: self.highscores, duration: 5),
-      30: self.sortedHighscores(highscores: self.highscores, duration: 30),
-      60: self.sortedHighscores(highscores: self.highscores, duration: 60)
+      5:  self.sortedHighscores(highscores: self.highscores.scores, duration: 5),
+      30: self.sortedHighscores(highscores: self.highscores.scores, duration: 30),
+      60: self.sortedHighscores(highscores: self.highscores.scores, duration: 60)
     ]
   }
 
@@ -119,9 +100,7 @@ struct HighscoresView: View {
         .frame(width: geometry.size.width * 0.9)
 
         Spacer()
-      }.onAppear(perform: {
-        self.highscores = Score.example
-      })
+      }
     }
   }
 
@@ -134,6 +113,6 @@ struct HighscoresView: View {
 
 struct HighscoresView_Previews: PreviewProvider {
   static var previews: some View {
-    HighscoresView()
+    HighscoresView().environmentObject(Highscores())
   }
 }

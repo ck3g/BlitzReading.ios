@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
   @ObservedObject var practiceParams = PracticeParams()
+  @ObservedObject var highscores = Highscores()
 
   let practiceManagementView = PracticeManagementView()
 
@@ -34,6 +35,7 @@ struct ContentView: View {
       }
     }
     .environmentObject(self.practiceParams)
+    .environmentObject(self.highscores)
   }
 }
 
