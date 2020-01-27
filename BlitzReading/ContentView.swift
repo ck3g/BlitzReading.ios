@@ -31,6 +31,12 @@ struct ContentView: View {
               Image(systemName: "rosette")
               Text("Highscores")
             }
+
+          SettingsView()
+            .tabItem {
+              Image(systemName: "slider.horizontal.3")
+              Text("Settings")
+            }
         }
       }
     }
