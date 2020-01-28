@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
   @ObservedObject var practiceParams = PracticeParams()
   @ObservedObject var highscores = Highscores()
+  @ObservedObject var language = Language()
 
   let practiceManagementView = PracticeManagementView()
 
@@ -42,6 +43,7 @@ struct ContentView: View {
     }
     .environmentObject(self.practiceParams)
     .environmentObject(self.highscores)
+    .environmentObject(self.language)
   }
 }
 

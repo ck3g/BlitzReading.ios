@@ -9,18 +9,9 @@
 import SwiftUI
 
 struct SettingsView: View {
-  @State private var locale = "en"
+  @EnvironmentObject var language: Language
+
   @State private var showingLanguageSelector = false
-
-  let locales = ["en", "de"]
-  let localesData = [
-    "en": ["name": "English"],
-    "de": ["name": "Deutsch"]
-  ]
-
-  var selectedLanguage: String {
-    self.localesData[self.locale]!["name"]!
-  }
 
   var body: some View {
     NavigationView {
@@ -31,7 +22,7 @@ struct SettingsView: View {
               Text("Language")
                 .foregroundColor(.primary)
               Spacer()
-              Text(self.selectedLanguage)
+              Text(self.language.current)
                 .foregroundColor(.secondary)
             }
           }
@@ -43,7 +34,8 @@ struct SettingsView: View {
       }
       .navigationBarTitle(Text("Settings"), displayMode: .inline)
       .sheet(isPresented: $showingLanguageSelector) {
-        LanguageSelectorView(selectedLocale: self.locale)
+        LanguageSelectorView(selectedLocale: self.language.locale)
+          .environmentObject(self.language)
       }
     }
   }

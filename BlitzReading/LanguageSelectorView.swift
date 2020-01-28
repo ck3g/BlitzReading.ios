@@ -10,21 +10,17 @@ import SwiftUI
 
 struct LanguageSelectorView: View {
   @Environment(\.presentationMode) var presentationMode
-  @State var selectedLocale: String
+  @EnvironmentObject var language: Language
 
-  let locales = ["en", "de"]
-  let localesData = [
-    "en": ["name": "English"],
-    "de": ["name": "Deutsch"]
-  ]
+  @State var selectedLocale: String
   
   var body: some View {
     NavigationView {
       Form {
         List {
-          ForEach(self.locales, id: \.self) { locale in
+          ForEach(self.language.locales, id: \.self) { locale in
             HStack {
-              Text(self.localeName(locale: locale))
+              Text(self.language.nameFor(locale: locale))
               Spacer()
               Image(systemName: locale == self.selectedLocale ? "largecircle.fill.circle" : "circle")
                 .foregroundColor(.green)
@@ -43,21 +39,17 @@ struct LanguageSelectorView: View {
           Image(systemName: "xmark")
         },
         trailing: Button(action: {
-          // save
+          self.language.setLocale(locale: self.selectedLocale)
           self.presentationMode.wrappedValue.dismiss()
         }) {
           Text("Save")
       })
     }
   }
-
-  func localeName(locale: String) -> String {
-    self.localesData[locale]?["name"] ?? "English"
-  }
 }
 
 struct LanguageSelectorView_Previews: PreviewProvider {
   static var previews: some View {
-    LanguageSelectorView(selectedLocale: "en")
+    LanguageSelectorView(selectedLocale: "de")
   }
 }
