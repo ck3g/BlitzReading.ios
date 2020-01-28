@@ -24,6 +24,7 @@
 		3428992423DAD8B600EBE2AA /* HighscoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3428992323DAD8B600EBE2AA /* HighscoresView.swift */; };
 		3428992623DD8A2B00EBE2AA /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3428992523DD8A2B00EBE2AA /* Score.swift */; };
 		3428992823DEC91600EBE2AA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3428992723DEC91600EBE2AA /* SettingsView.swift */; };
+		3428992C23E0181D00EBE2AA /* LanguageSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3428992B23E0181D00EBE2AA /* LanguageSelectorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		3428992323DAD8B600EBE2AA /* HighscoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresView.swift; sourceTree = "<group>"; };
 		3428992523DD8A2B00EBE2AA /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		3428992723DEC91600EBE2AA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3428992B23E0181D00EBE2AA /* LanguageSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				3428992323DAD8B600EBE2AA /* HighscoresView.swift */,
 				3428992523DD8A2B00EBE2AA /* Score.swift */,
 				3428992723DEC91600EBE2AA /* SettingsView.swift */,
+				3428992B23E0181D00EBE2AA /* LanguageSelectorView.swift */,
 			);
 			path = BlitzReading;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				342898FE23D5912700EBE2AA /* SceneDelegate.swift in Sources */,
 				3428992423DAD8B600EBE2AA /* HighscoresView.swift in Sources */,
 				3428990023D5912700EBE2AA /* ContentView.swift in Sources */,
+				3428992C23E0181D00EBE2AA /* LanguageSelectorView.swift in Sources */,
 				3428992823DEC91600EBE2AA /* SettingsView.swift in Sources */,
 				3428992623DD8A2B00EBE2AA /* Score.swift in Sources */,
 				3428992223DAD2EF00EBE2AA /* PracticeParams.swift in Sources */,

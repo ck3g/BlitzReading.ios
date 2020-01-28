@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SettingsView: View {
   @State private var locale = "en"
+  @State private var showingLanguageSelector = false
 
   let locales = ["en", "de"]
   let localesData = [
@@ -17,13 +18,21 @@ struct SettingsView: View {
     "de": ["name": "Deutsch"]
   ]
 
+  var selectedLanguage: String {
+    self.localesData[self.locale]!["name"]!
+  }
+
   var body: some View {
     NavigationView {
       Form {
         List {
-          Picker("Language", selection: $locale) {
-            ForEach(self.localesData.keys, id: \.self) {
-              Text(self.localesData[$0]!["name"]!)
+          Button(action: { self.showingLanguageSelector = true }) {
+            HStack {
+              Text("Language")
+                .foregroundColor(.primary)
+              Spacer()
+              Text(self.selectedLanguage)
+                .foregroundColor(.secondary)
             }
           }
 
@@ -33,6 +42,9 @@ struct SettingsView: View {
         }
       }
       .navigationBarTitle(Text("Settings"), displayMode: .inline)
+      .sheet(isPresented: $showingLanguageSelector) {
+        LanguageSelectorView(selectedLocale: self.locale)
+      }
     }
   }
 }
