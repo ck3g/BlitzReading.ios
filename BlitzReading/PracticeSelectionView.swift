@@ -30,12 +30,11 @@ struct PracticeButton: View {
 
 struct PracticeSelectionView: View {
   @EnvironmentObject var practiceParams: PracticeParams
-
-  let locales = ["en": "English", "de": "German"]
+  @EnvironmentObject var language: Language
 
   var body: some View {
     VStack {
-      Text("Practice \(locales[self.practiceParams.locale] ?? "English") words")
+      Text("Practice \(self.language.current) words")
         .font(.headline)
         .padding()
 

@@ -11,14 +11,22 @@ import SwiftUI
 class PracticeParams: ObservableObject {
   var practiceStarted = false
   var showResults = false
-  var locale = "en"
   var durationInSeconds = 60
   var wordsPracticed = 0
 
-  let words: [String]
+  private var allWords: [String:[String]]
 
   init() {
-    self.words = Bundle.main.decode("words.\(self.locale).json")
+    let locales = Language().locales
+    self.allWords = [String:[String]]()
+
+    for locale in locales {
+      self.allWords[locale] = Bundle.main.decode("words.\(locale).json")
+    }
+  }
+
+  func words(locale: String) -> [String] {
+    self.allWords[locale]!
   }
 
   func startPractice() {

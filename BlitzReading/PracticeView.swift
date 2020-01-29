@@ -71,7 +71,7 @@ struct PracticeView: View {
     }
     .onAppear(perform: {
       self.timeRemaining = self.practiceParams.durationInSeconds
-      self.remainingWords = self.practiceParams.words.shuffled()
+      self.remainingWords = self.practiceParams.words(locale: self.language.locale).shuffled()
       self.currentWord = self.getNextWord()
     })
   }
