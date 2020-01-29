@@ -33,18 +33,18 @@ struct HighscoresView: View {
   @EnvironmentObject var highscores: Highscores
   @EnvironmentObject var language: Language
 
-  let durations = [5, 30, 60]
-
   var localizedHighscores: [Score] {
     self.highscores.scores.filter({ $0.locale == self.language.locale })
   }
 
   var rankedHighscores: [Int: [Score]] {
-    [
-      5:  self.sortedHighscores(highscores: self.localizedHighscores, duration: 5),
-      30: self.sortedHighscores(highscores: self.localizedHighscores, duration: 30),
-      60: self.sortedHighscores(highscores: self.localizedHighscores, duration: 60)
-    ]
+    var _rankedHighscores = [Int:[Score]]()
+
+    for duration in PracticeParams.durations {
+      _rankedHighscores[duration] = self.sortedHighscores(highscores: self.localizedHighscores, duration: duration)
+    }
+
+    return _rankedHighscores
   }
 
   var longestListCount: Int {
@@ -52,7 +52,9 @@ struct HighscoresView: View {
   }
 
   var hasHighscores: Bool {
-    self.highscores.scores.count > 0
+    self.highscores.scores
+      .filter({ PracticeParams.durations.contains($0.practiceDuration) })
+      .count > 0
   }
 
   var body: some View {
@@ -86,7 +88,7 @@ struct HighscoresView: View {
               }
             }
 
-            ForEach(self.durations, id: \.self) { duration in
+            ForEach(PracticeParams.durations, id: \.self) { duration in
               Group {
                 Spacer()
 

@@ -38,17 +38,11 @@ struct PracticeSelectionView: View {
         .font(.headline)
         .padding()
 
-      PracticeButton(text: "for 5 seconds", action: {
-        self.practiceParams.startPractice(duration: 5)
-      })
-
-      PracticeButton(text: "for 30 seconds", action: {
-        self.practiceParams.startPractice(duration: 30)
-      })
-
-      PracticeButton(text: "for 60 seconds", action: {
-        self.practiceParams.startPractice(duration: 60)
-      })
+      ForEach(PracticeParams.durations, id: \.self) { duration in
+        PracticeButton(text: "for \(duration) seconds", action: {
+          self.practiceParams.startPractice(duration: duration)
+        })
+      }
     }
   }
 }
