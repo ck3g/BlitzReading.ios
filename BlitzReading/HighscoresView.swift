@@ -52,7 +52,7 @@ struct HighscoresView: View {
   }
 
   var hasHighscores: Bool {
-    self.highscores.scores
+    self.localizedHighscores
       .filter({ PracticeParams.durations.contains($0.practiceDuration) })
       .count > 0
   }
