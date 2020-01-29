@@ -31,14 +31,19 @@ struct HighscoresHeader: View {
 struct HighscoresView: View {
   @Environment(\.horizontalSizeClass) var sizeClass
   @EnvironmentObject var highscores: Highscores
+  @EnvironmentObject var language: Language
 
   let durations = [5, 30, 60]
 
+  var localizedHighscores: [Score] {
+    self.highscores.scores.filter({ $0.locale == self.language.locale })
+  }
+
   var rankedHighscores: [Int: [Score]] {
     [
-      5:  self.sortedHighscores(highscores: self.highscores.scores, duration: 5),
-      30: self.sortedHighscores(highscores: self.highscores.scores, duration: 30),
-      60: self.sortedHighscores(highscores: self.highscores.scores, duration: 60)
+      5:  self.sortedHighscores(highscores: self.localizedHighscores, duration: 5),
+      30: self.sortedHighscores(highscores: self.localizedHighscores, duration: 30),
+      60: self.sortedHighscores(highscores: self.localizedHighscores, duration: 60)
     ]
   }
 

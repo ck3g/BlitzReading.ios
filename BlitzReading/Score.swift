@@ -10,32 +10,31 @@ import SwiftUI
 
 struct Score: Identifiable, Codable {
   let id = UUID()
+  let locale: String
   let practiceDuration: Int
   let practicedWords: Int
   let createdAt = Date()
 
   static var example: [Score] = [
-    Score(practiceDuration: 5, practicedWords: 5),
-    Score(practiceDuration: 5, practicedWords: 7),
-    Score(practiceDuration: 5, practicedWords: 3),
-    Score(practiceDuration: 30, practicedWords: 27),
-    Score(practiceDuration: 30, practicedWords: 20),
-    Score(practiceDuration: 30, practicedWords: 35),
-    Score(practiceDuration: 30, practicedWords: 10),
-    Score(practiceDuration: 60, practicedWords: 60),
-    Score(practiceDuration: 60, practicedWords: 80)
+    Score(locale: "en", practiceDuration: 5, practicedWords: 5),
+    Score(locale: "en", practiceDuration: 5, practicedWords: 7),
+    Score(locale: "en", practiceDuration: 5, practicedWords: 3),
+    Score(locale: "en", practiceDuration: 30, practicedWords: 27),
+    Score(locale: "en", practiceDuration: 30, practicedWords: 20),
+    Score(locale: "en", practiceDuration: 30, practicedWords: 35),
+    Score(locale: "en", practiceDuration: 30, practicedWords: 10),
+    Score(locale: "en", practiceDuration: 60, practicedWords: 60),
+    Score(locale: "en", practiceDuration: 60, practicedWords: 80)
   ]
 }
 
 class Highscores: ObservableObject {
   var scores: [Score]
 
-  private var locale: String
   private var saveKey: String
 
   init() {
-    self.locale = "en"
-    self.saveKey = "highscores-\(locale)"
+    self.saveKey = "highscores"
 
     let filename = Self.getDocumentsDirectory().appendingPathComponent(self.saveKey)
 
@@ -50,9 +49,9 @@ class Highscores: ObservableObject {
     self.scores = []
   }
 
-  func add(duration: Int, words: Int) {
+  func add(locale: String, duration: Int, words: Int) {
     self.objectWillChange.send()
-    let score = Score(practiceDuration: duration, practicedWords: words)
+    let score = Score(locale: locale, practiceDuration: duration, practicedWords: words)
     self.scores.append(score)
     save()
   }

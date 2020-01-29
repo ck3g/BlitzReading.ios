@@ -11,6 +11,7 @@ import SwiftUI
 struct PracticeView: View {
   @EnvironmentObject var practiceParams: PracticeParams
   @EnvironmentObject var highscores: Highscores
+  @EnvironmentObject var language: Language
 
   let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -57,7 +58,7 @@ struct PracticeView: View {
 
       if self.timeRemaining == 0 {
         self.practiceParams.finishPractice(wordsPracticed: self.wordsPracticed)
-        self.highscores.add(duration: self.practiceParams.durationInSeconds, words: self.wordsPracticed)
+        self.highscores.add(locale: self.language.locale, duration: self.practiceParams.durationInSeconds, words: self.wordsPracticed)
       }
 
       self.timeRemaining -= 1
