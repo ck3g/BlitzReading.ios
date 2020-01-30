@@ -27,7 +27,7 @@ struct SettingsView: View {
             }
           }
 
-          NavigationLink(destination: Text("About the app")) {
+          NavigationLink(destination: AboutView()) {
             Text("About")
           }
         }
