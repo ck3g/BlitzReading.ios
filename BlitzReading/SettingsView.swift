@@ -19,7 +19,7 @@ struct SettingsView: View {
         List {
           Button(action: { self.showingLanguageSelector = true }) {
             HStack {
-              Text("Language")
+              Text("Practice language")
                 .foregroundColor(.primary)
               Spacer()
               Text(self.language.current)

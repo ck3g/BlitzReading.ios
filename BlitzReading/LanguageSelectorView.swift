@@ -31,7 +31,7 @@ struct LanguageSelectorView: View {
           }
         }
       }
-      .navigationBarTitle("Language", displayMode: .inline)
+      .navigationBarTitle("Practice language", displayMode: .inline)
       .navigationBarItems(
         leading: Button(action: {
           self.presentationMode.wrappedValue.dismiss()
