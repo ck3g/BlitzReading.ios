@@ -14,7 +14,7 @@ struct AboutView: View {
       ScrollView {
         VStack(alignment: .leading) {
           Group {
-            Text("When children make their steps in reading, one of the techniques they can acquire is to learn how to read sight words. Those are commonly used words that a reader can memorize and recognize as a whole without the need to split words into syllables.")
+            Text("When children make the first steps in reading, one of the techniques they can acquire is to learn how to read sight words. Those are commonly used words that a reader can memorize and recognize as a whole without the need to split words into syllables.")
           }
           .padding()
 
