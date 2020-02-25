@@ -39,9 +39,26 @@ struct AboutView: View {
           Group {
             Text("How to help").font(.title)
 
-            Text("You can help the app by reporting bugs, typos, improve this description, or helping introduce new languages. You can contact me on Twitter @ck3g or create an issue on GitHub page of the project https://github.com/ck3g/BlitzReading.ios")
+            Text("You can help the app by reporting bugs, typos, improve this description, or helping introduce new languages. You can contact me on Twitter or create an issue on GitHub page of the project.")
           }
           .padding()
+
+          Group{
+            HStack {
+              Text("Twitter:")
+              Button("@ck3g", action: {
+                UIApplication.shared.open(URL(string: "https://twitter.com/ck3g")!)
+              })
+            }
+            HStack {
+              Text("GitHub:")
+              Button("BlitzReading.ios", action: {
+                UIApplication.shared.open(URL(string: "https://github.com/ck3g/BlitzReading.ios")!)
+              })
+            }
+          }
+          .padding([.leading, .trailing])
+          .padding(.bottom, 10)
 
           Spacer()
         }
