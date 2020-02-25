@@ -74,30 +74,3 @@ struct AboutView_Previews: PreviewProvider {
     AboutView()
   }
 }
-
-/*
-When children make their steps in reading, one of the techniques they can acquire is to learn how to read sight words. Those are commonly used words that a reader can memorize and recognize as a whole without the need to split words into syllables.
-
-
-How it works
-
-The kid can pick a practice duration from the screen, which is starting a practice session. During that time, the child supposed to read (out loud) a suggested word and move to the next one until the time runs out.
-
-An adult can supervise the practice process to help the kid to read words properly, although that is not required.
-
-With enough practice, a young reader will be able to read those words faster. I would recommend practicing every day. With the small practice sessions (30 seconds, 60 seconds), you can do it almost everywhere. When you are waiting in the line, or commute, before bedtime. You choose.
-
-At the time you think your child reads fast and clear enough, then the goal of the app is accomplished.
-
-The kids can use the app to practice sight word reading for their second language as well. Although at the moment only English and German languages are supported.
-
-Ads
-
-The app does not use any advertisement features and never will. I think that kids shouldn't be distracted during the practice and learning process. They should only focus on the process.
-
-
-How to help
-
-You can help the app by reporting bugs, typos, or helping introduce new languages. You can contact me on Twitter @ck3g or create an issue on GitHub page of the project https://github.com/ck3g/BlitzReading.ios
-
-*/
