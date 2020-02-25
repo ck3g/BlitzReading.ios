@@ -45,6 +45,7 @@ struct AboutView: View {
 
           Spacer()
         }
+        .padding(.top, -80) // removes the gap above the text
       }
     }
     .navigationBarTitle("About", displayMode: .inline)
