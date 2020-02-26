@@ -29,7 +29,7 @@ struct ContentView: View {
 
           HighscoresView()
             .tabItem {
-              Image(systemName: "rosette")
+              Image("trophy-icon")
               Text("Highscores")
             }
 

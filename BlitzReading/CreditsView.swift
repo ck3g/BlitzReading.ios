@@ -36,6 +36,13 @@ struct CreditsView: View {
               .font(.title)
 
             Group {
+              Text("Trophy icon by Icons8")
+                .font(.headline)
+              UrlButton(urlString: "https://icons8.com/icons/set/trophy--v1")
+              UrlButton(urlString: "https://icons8.com")
+            }
+
+            Group {
               Text("GitHub icon by Icons8")
                 .font(.headline)
               UrlButton(urlString: "https://icons8.com/icons/set/github")
