@@ -45,13 +45,19 @@ struct AboutView: View {
 
           Group{
             HStack {
-              Text("Twitter:")
+              Image("twitter-icon")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 24, height: 24)
               Button("@ck3g", action: {
                 UIApplication.shared.open(URL(string: "https://twitter.com/ck3g")!)
               })
             }
             HStack {
-              Text("GitHub:")
+              Image("github-icon")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 24, height: 24)
               Button("BlitzReading.ios", action: {
                 UIApplication.shared.open(URL(string: "https://github.com/ck3g/BlitzReading.ios")!)
               })

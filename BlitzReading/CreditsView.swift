@@ -8,6 +8,16 @@
 
 import SwiftUI
 
+struct UrlButton: View {
+  let urlString: String
+
+  var body: some View {
+    Button(urlString, action: {
+      UIApplication.shared.open(URL(string: self.urlString)!)
+    })
+  }
+}
+
 struct CreditsView: View {
   var body: some View {
     NavigationView {
@@ -24,10 +34,23 @@ struct CreditsView: View {
           Group {
             Text("Icons")
               .font(.title)
-              .padding(.bottom)
 
+            Group {
+              Text("GitHub icon by Icons8")
+                .font(.headline)
+              UrlButton(urlString: "https://icons8.com/icons/set/github")
+              UrlButton(urlString: "https://icons8.com")
+            }
+
+            Group {
+              Text("Twitter icon by Icons8")
+                .font(.headline)
+              UrlButton(urlString: "https://icons8.com/icons/set/twitter")
+              UrlButton(urlString: "https://icons8.com")
+            }
 
           }
+          .padding(.bottom)
         }
         .padding([.leading, .trailing], 7)
         .padding(.top, -80) // removes the gap above the text
