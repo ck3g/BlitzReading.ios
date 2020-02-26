@@ -13,10 +13,10 @@ struct HighscoresHeader: View {
 
   var body: some View {
     Group {
-      Image(systemName: "rosette")
+      Image("trophy")
         .resizable()
         .scaledToFit()
-        .frame(width: 70)
+        .frame(width: 100)
         .foregroundColor(.yellow)
         .padding(.top, screenHeight * 0.05)
         .padding(.bottom)

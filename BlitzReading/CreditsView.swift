@@ -18,6 +18,21 @@ struct UrlButton: View {
   }
 }
 
+struct Icon8Credit: View {
+  let title: String
+  let iconName: String
+
+  var body: some View {
+    Group {
+      Text("\(title) icon by Icons8")
+        .font(.headline)
+      UrlButton(urlString: "https://icons8.com/icons/set/\(iconName)")
+      UrlButton(urlString: "https://icons8.com")
+        .padding(.bottom)
+    }
+  }
+}
+
 struct CreditsView: View {
   var body: some View {
     NavigationView {
@@ -35,29 +50,12 @@ struct CreditsView: View {
             Text("Icons")
               .font(.title)
 
-            Group {
-              Text("Trophy icon by Icons8")
-                .font(.headline)
-              UrlButton(urlString: "https://icons8.com/icons/set/trophy--v1")
-              UrlButton(urlString: "https://icons8.com")
-            }
-
-            Group {
-              Text("GitHub icon by Icons8")
-                .font(.headline)
-              UrlButton(urlString: "https://icons8.com/icons/set/github")
-              UrlButton(urlString: "https://icons8.com")
-            }
-
-            Group {
-              Text("Twitter icon by Icons8")
-                .font(.headline)
-              UrlButton(urlString: "https://icons8.com/icons/set/twitter")
-              UrlButton(urlString: "https://icons8.com")
-            }
-
+            Icon8Credit(title: "Trophy", iconName: "trophy")
+            Icon8Credit(title: "Trophy", iconName: "trophy--v1")
+            Icon8Credit(title: "GitHub", iconName: "github")
+            Icon8Credit(title: "Twitter", iconName: "twitter")
           }
-          .padding(.bottom)
+          .padding(.bottom, 10)
         }
         .padding([.leading, .trailing], 7)
         .padding(.top, -80) // removes the gap above the text
