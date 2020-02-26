@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34037F962406634000C3F695 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34037F952406634000C3F695 /* CreditsView.swift */; };
 		34240E5223E2BBDF00600208 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34240E5123E2BBDF00600208 /* AboutView.swift */; };
 		342898FC23D5912700EBE2AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342898FB23D5912700EBE2AA /* AppDelegate.swift */; };
 		342898FE23D5912700EBE2AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342898FD23D5912700EBE2AA /* SceneDelegate.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34037F952406634000C3F695 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		34240E5123E2BBDF00600208 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		342898F823D5912700EBE2AA /* BlitzReading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlitzReading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		342898FB23D5912700EBE2AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				3428992B23E0181D00EBE2AA /* LanguageSelectorView.swift */,
 				3428992D23E01BDD00EBE2AA /* Language.swift */,
 				34240E5123E2BBDF00600208 /* AboutView.swift */,
+				34037F952406634000C3F695 /* CreditsView.swift */,
 			);
 			path = BlitzReading;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				3428992023D97E0000EBE2AA /* PracticeManagementView.swift in Sources */,
 				3428992E23E01BDD00EBE2AA /* Language.swift in Sources */,
 				34240E5223E2BBDF00600208 /* AboutView.swift in Sources */,
+				34037F962406634000C3F695 /* CreditsView.swift in Sources */,
 				3428991E23D8282700EBE2AA /* PracticeResultsView.swift in Sources */,
 				3428991A23D6D76800EBE2AA /* PracticeView.swift in Sources */,
 				3428991623D5982B00EBE2AA /* Bundle-Decodable.swift in Sources */,

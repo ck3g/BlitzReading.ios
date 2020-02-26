@@ -30,6 +30,10 @@ struct SettingsView: View {
           NavigationLink(destination: AboutView()) {
             Text("About")
           }
+
+          NavigationLink(destination: CreditsView()) {
+            Text("Credits")
+          }
         }
       }
       .navigationBarTitle(Text("Settings"), displayMode: .inline)
