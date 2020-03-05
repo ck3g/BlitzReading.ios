@@ -19,8 +19,8 @@ struct PracticeButton: View {
     }
     .padding()
     .frame(width: 250)
-    .foregroundColor(.blue)
-    .background(Color.white)
+    .foregroundColor(.accentColor)
+    .background(Color(UIColor.systemBackground))
     .overlay(
       RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 2)
     )
