@@ -22,7 +22,7 @@ struct PracticeButton: View {
     .foregroundColor(.accentColor)
     .background(Color(UIColor.systemBackground))
     .overlay(
-      RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 2)
+      RoundedRectangle(cornerRadius: 10).stroke(Color.accentColor, lineWidth: 2)
     )
     .padding(10)
   }

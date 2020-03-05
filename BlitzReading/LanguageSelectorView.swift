@@ -23,7 +23,7 @@ struct LanguageSelectorView: View {
               Text(self.language.nameFor(locale: locale))
               Spacer()
               Image(systemName: locale == self.selectedLocale ? "largecircle.fill.circle" : "circle")
-                .foregroundColor(.green)
+                .foregroundColor(.accentColor)
             }
             .onTapGesture {
               self.selectedLocale = locale
@@ -45,6 +45,7 @@ struct LanguageSelectorView: View {
           Text("Save")
       })
     }
+    .accentColor(.purple)
   }
 }
 

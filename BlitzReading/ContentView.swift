@@ -44,6 +44,7 @@ struct ContentView: View {
     .environmentObject(self.practiceParams)
     .environmentObject(self.highscores)
     .environmentObject(self.language)
+    .accentColor(.purple)
   }
 }
 
