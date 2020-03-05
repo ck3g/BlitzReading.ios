@@ -51,7 +51,6 @@ struct CreditsView: View {
               .font(.title)
 
             Icon8Credit(title: "Trophy", iconName: "trophy")
-            Icon8Credit(title: "Trophy", iconName: "trophy--v1")
             Icon8Credit(title: "GitHub", iconName: "github")
             Icon8Credit(title: "Twitter", iconName: "twitter")
           }
