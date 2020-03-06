@@ -33,7 +33,7 @@
 /* Begin PBXFileReference section */
 		34037F952406634000C3F695 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		34240E5123E2BBDF00600208 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		342898F823D5912700EBE2AA /* BlitzReading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlitzReading.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		342898F823D5912700EBE2AA /* Blitz Read.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blitz Read.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		342898FB23D5912700EBE2AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		342898FD23D5912700EBE2AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		342898FF23D5912700EBE2AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		342898F923D5912700EBE2AA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				342898F823D5912700EBE2AA /* BlitzReading.app */,
+				342898F823D5912700EBE2AA /* Blitz Read.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,7 +137,7 @@
 			);
 			name = BlitzReading;
 			productName = BlitzReading;
-			productReference = 342898F823D5912700EBE2AA /* BlitzReading.app */;
+			productReference = 342898F823D5912700EBE2AA /* Blitz Read.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -353,8 +353,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ck3g.tatarintev.vitali.BlitzReading;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = ck3g.tatarintev.vitali.BlitzRead;
+				PRODUCT_NAME = "Blitz Read";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -373,8 +373,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ck3g.tatarintev.vitali.BlitzReading;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = ck3g.tatarintev.vitali.BlitzRead;
+				PRODUCT_NAME = "Blitz Read";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
