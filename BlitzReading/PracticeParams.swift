@@ -14,7 +14,7 @@ class PracticeParams: ObservableObject {
   var durationInSeconds = 60
   var wordsPracticed = 0
 
-  static let durations = [5, 30, 60]
+  static let durations = [30, 60]
 
   private var allWords: [String:[String]]
 
