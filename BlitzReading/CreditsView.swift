@@ -38,10 +38,10 @@ struct CreditsView: View {
       ScrollView {
         VStack(alignment: .leading) {
           Group {
-            Text("BlitzReading")
+            Text("Blitz Read")
               .font(.largeTitle)
 
-            Text("BlitzReading was developed by Vitali Tatarintev. If you have any feedback or questions, you're welcome to tweet me @ck3g.")
+            Text("Blitz Read was developed by Vitali Tatarintev. If you have any feedback or questions, you're welcome to tweet me @ck3g.")
           }
           .padding(.bottom)
 
