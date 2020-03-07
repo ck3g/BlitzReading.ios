@@ -24,10 +24,9 @@ struct Icon8Credit: View {
 
   var body: some View {
     Group {
-      Text("\(title) icon by Icons8")
+      Text("\(title) icon by Icons8.com")
         .font(.headline)
-      UrlButton(urlString: "https://icons8.com/icons/set/\(iconName)")
-      UrlButton(urlString: "https://icons8.com")
+      Text("https://icons8.com/icons/set/\(iconName)")
         .padding(.bottom)
     }
   }
@@ -51,8 +50,6 @@ struct CreditsView: View {
               .font(.title)
 
             Icon8Credit(title: "Trophy", iconName: "trophy")
-            Icon8Credit(title: "GitHub", iconName: "github")
-            Icon8Credit(title: "Twitter", iconName: "twitter")
           }
           .padding(.bottom, 10)
         }
