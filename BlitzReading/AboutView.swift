@@ -36,13 +36,6 @@ struct AboutView: View {
           }
           .padding()
 
-          Group {
-            Text("How to help").font(.title)
-
-            Text("You can help the app by reporting bugs, typos, improve this description, or helping introduce new languages. You can contact me on Twitter @ck3g or create an issue on GitHub page of the project (https://github.com/ck3g/BlitzReading.ios).")
-          }
-          .padding()
-
           Spacer()
         }
         .padding(.top, -80) // removes the gap above the text
