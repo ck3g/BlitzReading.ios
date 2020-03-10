@@ -5,7 +5,6 @@
 //  Created by Vitali Tatarintev on 30.01.20.
 //  Copyright © 2020 Vitali Tatarintev. All rights reserved.
 //
-
 import SwiftUI
 
 struct AboutView: View {
@@ -35,6 +34,36 @@ struct AboutView: View {
             Text("The app does not use any advertisement features and never will. I think that kids shouldn't be distracted during the practice and learning process. They should only focus on the process.")
           }
           .padding()
+
+          Group {
+            Text("How to help").font(.title)
+
+            Text("You can help the app by reporting bugs, typos, improve this description, or helping introduce new languages. You can contact me on Twitter or create an issue on GitHub page of the project.")
+          }
+          .padding()
+
+          Group{
+            HStack {
+              Image("twitter-icon")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 24, height: 24)
+              Button("@ck3g", action: {
+                UIApplication.shared.open(URL(string: "https://twitter.com/ck3g")!)
+              })
+            }
+            HStack {
+              Image("github-icon")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 24, height: 24)
+              Button("BlitzReading.ios", action: {
+                UIApplication.shared.open(URL(string: "https://github.com/ck3g/BlitzReading.ios")!)
+              })
+            }
+          }
+          .padding([.leading, .trailing])
+          .padding(.bottom, 10)
 
           Spacer()
         }
