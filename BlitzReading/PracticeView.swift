@@ -35,6 +35,9 @@ struct PracticeView: View {
 
       Text(self.currentWord)
         .font(.system(size: 90))
+        .lineLimit(1)
+        .minimumScaleFactor(0.1)
+        .padding()
 
       VStack {
         Spacer()
